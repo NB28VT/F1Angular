@@ -29,75 +29,23 @@
       <div id="sidebar-wrapper">
           <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="#/">
                     F1 Angular Tutorial App 
                 </a>
             </li>              
           </ul>
       </div>
       <!-- Page Content -->
-      <div id="page-content-wrapper" ng-controller= "driversController">
+      <div id="page-content-wrapper">
           <div class="container-fluid">
               <div class="row">
                   <div class="col-lg-12">
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                      
-                     <form>
-                      <div class = "form-group">
-                        <div class = "input-group">
-                          <div class =  "input-group-addon"><i class = "fa fa-search"></i></div>
-                            <input type="text" class="form-control" placeholder="Enter a season" ng-model="standingsYear">      
-                        </div>
-                      </div>
-                    </form> 
-
-                    <table class = "table table-bordered table-striped table-hover">
-                      <thead>
-                          <tr><th colspan="4">{{standingsYear}} F1 Drivers Championship Standings</th></tr>
-                          <th>
-                            <a href= "" ng-click="sortType = 'Driver.familyName'; sortReverse = !sortReverse">
-                              Driver
-                              <span ng-show="sortType == 'Driver.familyName' && !sortReverse" class="fa fa-caret-down"></span>
-                              <span ng-show="sortType == 'Driver.familyName' && sortReverse" class="fa fa-caret-up"></span>
-                            </a>
-                          </th>
-
-                          <th>
-                            <a href= "" ng-click="sortType = 'Constructors[0].name'; sortReverse = !sortReverse">
-                              Team
-                              <span ng-show="sortType == 'Constructors[0].name' && !sortReverse" class="fa fa-caret-down"></span>
-                              <span ng-show="sortType == 'Constructors[0].name' && sortReverse" class="fa fa-caret-up"></span>
-                            </a>
-                          </th>
-
-                          <th>
-                            <a href= "" ng-click="sortType = 'wins'; sortReverse = !sortReverse">
-                              Wins
-                              <span ng-show="sortType == 'wins' && !sortReverse" class="fa fa-caret-down"></span>
-                              <span ng-show="sortType == 'wins' && sortReverse" class="fa fa-caret-up"></span>
-                            </a>
-                          </th>
-
-                          <th>
-                            <a href= "" ng-click="sortType = 'points'; sortReverse = !sortReverse">
-                              Points
-                              <span ng-show="sortType == 'points' && !sortReverse" class="fa fa-caret-down"></span>
-                              <span ng-show="sortType == 'points' && sortReverse" class="fa fa-caret-up"></span>
-                            </a>  
-                          </th>
-                      </thead>
-                      <tbody>
-                        <tr ng-repeat="driver in driversList | orderBy:sortType:sortReverse">
-
-                          <td>
-                            <a ng-href={{driver.Driver.url}}>{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}</a></td>
-                          </td>
-                          <td><a ng-href={{driver.Constructors[0].url}}>{{driver.Constructors[0].name}}</a></td>
-                          <td>{{driver.wins}}</td>
-                          <td>{{driver.points}}</td>
-                        </tr>
-                      </tbody>
-                    </table> 
+                    <div ng-view>
+                      <!-- Single pagey -->
+                    </div> 
+                     
                   </div>
               </div>
       </div>
