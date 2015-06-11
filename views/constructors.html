@@ -1,0 +1,34 @@
+<form>
+  <div class = "form-group">
+    <div class = "input-group">
+      <div class =  "input-group-addon"><i class = "fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Enter a season" ng-model="standingsYear">      
+    </div>
+  </div>
+</form> 
+
+<table class = "table table-bordered table-striped table-hover">
+  <thead>
+      <tr><th colspan="4">{{standingsYear}} F1 Constructors Championship Standings</th></tr>
+      <th>
+      	Constructor
+      </th>
+
+      <th>
+        Wins
+      </th>
+
+      <th>
+	    Points
+      </th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="constructor in constructorsList | orderBy:sortType:sortReverse">
+      <td>
+        <a ng-href={{constructor.Constructor.url}}>{{constructor.Constructor.name}}</a>
+      </td>
+      <td>{{constructor.wins}}</td>
+      <td>{{constructor.points}}</td>
+    </tr>
+  </tbody>
+</table> 

@@ -16,6 +16,11 @@ app.config(['$routeProvider',
    .when('/drivers', {
 	    templateUrl: 'views/drivers.html',
 	    controller : 'driversController'
+    })
+
+    .when('/constructors', {
+      templateUrl: 'views/constructors.html',
+      controller : 'constructorsController'
     });
   }
  ]);
