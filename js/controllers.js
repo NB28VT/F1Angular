@@ -16,6 +16,7 @@ angular.module('F1App.controllers',[])
 			$scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 			$scope.driversList.forEach(function(driver){
    			driver.points = parseFloat(driver.points);
+			driver.wins = parseFloat(driver.wins);
 		  });
 		});
 	   }
@@ -35,6 +36,7 @@ angular.module('F1App.controllers',[])
 				$scope.constructorsList = response.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 				$scope.constructorsList.forEach(function(constructor){
 	   			constructor.points = parseFloat(constructor.points);
+	   			constructor.wins = parseFloat(constructor.wins);
 	   		 });
 		});
 	   }

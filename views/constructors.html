@@ -11,15 +11,27 @@
   <thead>
       <tr><th colspan="4">{{standingsYear}} F1 Constructors Championship Standings</th></tr>
       <th>
-      	Constructor
+      	<a href= "" ng-click="sortType = 'Constructor.name'; sortReverse = !sortReverse">
+          Constructor
+          <span ng-show="sortType == 'Constructor.name' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'Constructor.name' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
       </th>
 
       <th>
-        Wins
+        <a href= "" ng-click="sortType = 'wins'; sortReverse = !sortReverse">
+          Wins
+          <span ng-show="sortType == 'wins' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'wins' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
       </th>
 
       <th>
-	    Points
+	    <a href= "" ng-click="sortType = 'points'; sortReverse = !sortReverse">
+          Points
+          <span ng-show="sortType == 'points' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'points' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
       </th>
   </thead>
   <tbody>
